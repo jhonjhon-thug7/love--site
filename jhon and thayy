@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Você, Momor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 90%;
+      margin: auto;
+    }
+    .contador {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .mensagem {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="contador" id="contador"></div>
+    <div class="mensagem">
+      <p><strong>Momor,</strong></p>
+      <p>Desde o dia em que a gente se conheceu na escola, tudo começou a fazer mais sentido pra mim.</p>
+      <p>Eu me apaixono cada vez mais pelo jeito que você cuida de mim, pelo seu olhar, pelo carinho em cada detalhe.</p>
+      <p>Nosso amor é leve, divertido, intenso... e cheio de parceria.</p>
+      <p>Você me faz sentir em casa, me faz querer ser melhor todos os dias.</p>
+      <p>Eu te amo demais. E tô disposto a enfrentar qualquer coisa pra ficar com você, pra construir nossa vida, e um dia te ver sendo a mãe dos nossos filhos.</p>
+      <p><strong>Tô com você pra tudo. Sempre. 💖</strong></p>
+    </div>
+  </div>
+
+  <script>
+    // Data de início: 1 de julho de 2025 (sem horário específico)
+    const inicio = new Date('2025-07-01T00:00:00');
+    function atualizar() {
+      const agora = new Date();
+      let diff = agora - inicio;
+      const seg = Math.floor(diff / 1000);
+      const dias = Math.floor(seg / 86400);
+      const horas = Math.floor((seg % 86400) / 3600);
+      const mins = Math.floor((seg % 3600) / 60);
+      const secs = seg % 60;
+      document.getElementById('contador').textContent =
+        `Estamos juntos há ${dias} dias, ${horas} horas, ${mins} minutos e ${secs} segundos`;
+    }
+    atualizar();
+    setInterval(atualizar, 1000);
+  </script>
+</body>
+</html>
